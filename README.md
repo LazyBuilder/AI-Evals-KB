@@ -1,43 +1,38 @@
-# Evals Lab — GitHub Pages package, version 2
+# Evals Lab — GitHub Pages package, version 3
 
-The complete static website, with the Precision Workbench layout, Midnight Observatory colors, larger reading text, higher contrast, section gradients, and six original editorial illustrations.
+A complete static field guide with a distinct illustration for every project.
 
-## Publish or update the site
+## Publish or update
 
-1. Extract this ZIP.
-2. Upload ALL extracted files and folders to your repository’s root on main. Include the new `readability.css` file and the entire `assets/` folder. Do not upload only the ZIP or place the files inside an extra folder.
-3. In Settings → Pages, use Deploy from a branch → main → /(root), then Save if you have not already configured it.
-4. GitHub will publish the changes. If the previous appearance is cached, hard-refresh the page.
+1. Extract the ZIP and upload ALL files and folders to the repository root on main.
+2. Include `readability.css`, `assets/`, and all other website files. Do not upload only the ZIP or nest the website inside an extra folder.
+3. In Settings → Pages, keep Deploy from a branch → main → /(root).
+4. Wait for GitHub to publish the update. Hard-refresh if your browser still shows the old version.
 
-`index.html` must be directly at the repository root. No custom Actions workflow, build command, backend, or API keys are needed. Asset paths and hash navigation work in a GitHub Pages project subfolder.
+`index.html` belongs directly at the repository root. There is no installation, build command, backend, API key, or custom Actions workflow.
 
-## Included files
+## What changed in version 3
 
-- `index.html` — entry point
-- `styles.css` — base layout and styles
-- `readability.css` — larger type, improved contrast, gradients, and image layouts
-- `app.js` — navigation, search, filters, bookmarks, downloads, and experiments
-- `content.js` — five layers, fifteen guides, fifteen blueprints, sources, and glossary
-- `favicon.svg` — browser icon
-- `assets/images/` — six optimized WebP illustrations and six smaller responsive versions
-- `IMAGE_CREDITS.md` — image provenance and descriptions
-- `IMAGE_PROMPTS.json` — full prompt set used with built-in image generation
-- `.nojekyll` — direct static serving marker
+- Fifteen new, individually generated project illustrations, each with a distinct subject and composition.
+- The five chapter illustrations are now reserved for their chapter introductions.
+- Each project card and its own detail page share that project's visual identity; different projects no longer reuse a chapter image.
+- Short practical guides use text-led headers instead of repeating chapter cover images.
+- The overview retains its original hero image; related and featured cards use the corresponding project's unique thumbnail.
+- The larger fonts, brighter text, and section gradients from version 2 are retained.
 
-Keep all files and folders together. The images are packaged locally; they are not linked from the Voice AI website or an image hosting service. The Voice AI site was used only as a visual reference.
+## Contents
 
-## Reading improvements
+- `index.html`, `styles.css`, `readability.css`, `app.js`, `content.js`, `favicon.svg`
+- `assets/images/`: 21 original illustrations plus 21 smaller responsive versions
+- `ARTWORK_MANIFEST.json`: the hero, chapter, and project artwork assignments
+- `IMAGE_CREDITS.md`: image provenance and usage notes
+- `IMAGE_PROMPTS.json`: the complete built-in image-generation prompt set
+- `.nojekyll`: static serving marker
 
-- Desktop article paragraphs: 18px; mobile: 17px
-- Card descriptions: 16px
-- Larger controls, clearer labels, and brighter secondary text
-- Gentle gradients highlight the hero, layer panels, section headings, and reading callouts
-- Layer images appear in chapter introductions, article covers, and project cards
+All images are packaged locally. Google Fonts load over the internet with system-font fallbacks. Bookmarks and checklist state stay in each visitor's browser. Experiments use constructed teaching examples and do not operate a production service.
 
-## Requirements and behavior
-
-No OpenAI or Sites account is required to host this package. Google Fonts load over the internet with system font fallbacks. Personal reading lists and checklist state stay in the visitor’s browser. Teaching experiments use constructed examples and do not call a live model or production service.
+Edit `content.js` for knowledge content and `readability.css` for the visual refinements. Keep all website files and asset folders together.
 
 ## Verification
 
-JavaScript syntax and content-reference checks passed. Image files, package integrity, and relative asset paths were verified. Desktop and mobile layouts were checked down to 320px, including article text, image sizing, project search, and navigation. No publishing was performed for this update.
+JavaScript syntax, content links, image formats, and unique project-image assignments were checked. The catalog was reviewed for visual repetition and desktop/mobile layouts were checked. Packaged files were verified against the checked source. No publishing was performed for this update.

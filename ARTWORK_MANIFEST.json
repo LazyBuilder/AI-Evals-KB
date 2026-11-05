@@ -1,0 +1,175 @@
+{
+  "version": 3,
+  "tool": "Built-in OpenAI image generation",
+  "usage": "Chapter artwork is reserved for chapter introductions. Each project uses its own distinct image on its card and detail page. Short guides have no repeated chapter covers.",
+  "assignments": [
+    {
+      "id": "hero",
+      "scope": "overview",
+      "title": "Evidence through five layers",
+      "file": "assets/images/hero.webp",
+      "responsive_file": "assets/images/hero-small.webp",
+      "alt": "Evidence passing through five inspection frames"
+    },
+    {
+      "id": "foundation",
+      "scope": "chapter",
+      "title": "Foundation — Test data",
+      "file": "assets/images/foundation.webp",
+      "responsive_file": "assets/images/foundation-small.webp",
+      "alt": "Conceptual illustration for Foundation"
+    },
+    {
+      "id": "definition",
+      "scope": "chapter",
+      "title": "Definition — Success criteria",
+      "file": "assets/images/definition.webp",
+      "responsive_file": "assets/images/definition-small.webp",
+      "alt": "Conceptual illustration for Definition"
+    },
+    {
+      "id": "measurement",
+      "scope": "chapter",
+      "title": "Measurement — Evals",
+      "file": "assets/images/measurement.webp",
+      "responsive_file": "assets/images/measurement-small.webp",
+      "alt": "Conceptual illustration for Measurement"
+    },
+    {
+      "id": "protection",
+      "scope": "chapter",
+      "title": "Protection — Guardrails",
+      "file": "assets/images/protection.webp",
+      "responsive_file": "assets/images/protection-small.webp",
+      "alt": "Conceptual illustration for Protection"
+    },
+    {
+      "id": "authority",
+      "scope": "chapter",
+      "title": "Authority — Sign-off",
+      "file": "assets/images/authority.webp",
+      "responsive_file": "assets/images/authority-small.webp",
+      "alt": "Conceptual illustration for Authority"
+    },
+    {
+      "id": "project-trajectory",
+      "scope": "project",
+      "title": "Trajectory Grading Engine",
+      "file": "assets/images/project-trajectory.webp",
+      "responsive_file": "assets/images/project-trajectory-small.webp",
+      "alt": "A branching route of connected glass nodes is inspected by a probe at one broken orange junction."
+    },
+    {
+      "id": "project-shadow",
+      "scope": "project",
+      "title": "Shadow Routing Comparator",
+      "file": "assets/images/project-shadow.webp",
+      "responsive_file": "assets/images/project-shadow-small.webp",
+      "alt": "A central beam splits into a bright serving path and a faint parallel comparison path on an optical bench."
+    },
+    {
+      "id": "project-judge",
+      "scope": "project",
+      "title": "Calibrated LLM-as-a-Judge",
+      "file": "assets/images/project-judge.webp",
+      "responsive_file": "assets/images/project-judge-small.webp",
+      "alt": "A precision balance compares differently shaped glass responses with a fine calibration dial."
+    },
+    {
+      "id": "project-gate",
+      "scope": "project",
+      "title": "CI/CD Regression Gate",
+      "file": "assets/images/project-gate.webp",
+      "responsive_file": "assets/images/project-gate-small.webp",
+      "alt": "A mechanical pipeline valve stops an amber pulse while a separate blue route remains clear."
+    },
+    {
+      "id": "project-rag",
+      "scope": "project",
+      "title": "RAG Adversarial Harness",
+      "file": "assets/images/project-rag.webp",
+      "responsive_file": "assets/images/project-rag-small.webp",
+      "alt": "Light threads connect a glass answer tile to selected pages of an open archival book, with one unsupported thread left unattached."
+    },
+    {
+      "id": "project-dpo",
+      "scope": "project",
+      "title": "Automated DPO Flywheel",
+      "file": "assets/images/project-dpo.webp",
+      "responsive_file": "assets/images/project-dpo-small.webp",
+      "alt": "Paired preference tokens circulate through a sculptural feedback loop and emerge as one refined token."
+    },
+    {
+      "id": "project-significance",
+      "scope": "project",
+      "title": "Statistical Significance Engine",
+      "file": "assets/images/project-significance.webp",
+      "responsive_file": "assets/images/project-significance-small.webp",
+      "alt": "Two colored clouds of glass beads are compared within a transparent uncertainty envelope."
+    },
+    {
+      "id": "project-fuzzer",
+      "scope": "project",
+      "title": "Agent Red-Team Fuzzer",
+      "file": "assets/images/project-fuzzer.webp",
+      "responsive_file": "assets/images/project-fuzzer-small.webp",
+      "alt": "An irregular tool connector is stress-tested by several fine mechanical probes on an isolated test rig."
+    },
+    {
+      "id": "project-drift",
+      "scope": "project",
+      "title": "Production Drift Monitor",
+      "file": "assets/images/project-drift.webp",
+      "responsive_file": "assets/images/project-drift-small.webp",
+      "alt": "A scanning head inspects a long sequence of sample beads whose shape and color gradually change."
+    },
+    {
+      "id": "project-pareto",
+      "scope": "project",
+      "title": "Cost–Quality Pareto Dashboard",
+      "file": "assets/images/project-pareto.webp",
+      "responsive_file": "assets/images/project-pareto-small.webp",
+      "alt": "A sculptural tradeoff curve carries selected blue and gold blocks while less efficient configurations sit away from it."
+    },
+    {
+      "id": "project-replay",
+      "scope": "project",
+      "title": "Counterfactual Replay Debugger",
+      "file": "assets/images/project-replay.webp",
+      "responsive_file": "assets/images/project-replay-small.webp",
+      "alt": "One frame is lifted from a physical glass filmstrip for replacement and controlled replay."
+    },
+    {
+      "id": "project-synthetic",
+      "scope": "project",
+      "title": "Synthetic Edge-Case Generator",
+      "file": "assets/images/project-synthetic.webp",
+      "responsive_file": "assets/images/project-synthetic-small.webp",
+      "alt": "An illuminated geometric seed produces varied irregular test pieces through a precision fabrication mold."
+    },
+    {
+      "id": "project-context",
+      "scope": "project",
+      "title": "Context Window Eviction Tester",
+      "file": "assets/images/project-context.webp",
+      "responsive_file": "assets/images/project-context-small.webp",
+      "alt": "A circular memory carousel moves a glass tile from a crowded active ring to a separate archive spool."
+    },
+    {
+      "id": "project-contamination",
+      "scope": "project",
+      "title": "Dataset Contamination Checker",
+      "file": "assets/images/project-contamination.webp",
+      "responsive_file": "assets/images/project-contamination-small.webp",
+      "alt": "Two translucent document sheets reveal matching fingerprint-like patterns where training and evaluation material overlap."
+    },
+    {
+      "id": "project-methodology",
+      "scope": "project",
+      "title": "Public Eval Methodology Teardown",
+      "file": "assets/images/project-methodology.webp",
+      "responsive_file": "assets/images/project-methodology-small.webp",
+      "alt": "An open research notebook, drafting compass, and reproducible geometric specimen form a methodology still-life."
+    }
+  ]
+}
