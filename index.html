@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101323">
+  <meta name="description" content="A practical field guide to AI evaluation. Explore five layers, fifteen engineering project blueprints, and interactive experiments from test data to release decisions.">
+  <title>Evals Lab — From Evidence to Release</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-scroll="main">Skip to content</a>
+  <header class="topbar">
+    <div class="brand-group"><button class="icon-button mobile-menu" id="menu-button" aria-label="Open navigation" aria-expanded="false" aria-controls="sidebar"><span data-icon="menu"></span></button><a class="brand" href="#/overview" aria-label="Evals Lab home"><span class="brand-mark" aria-hidden="true"></span>Evals Lab<span class="brand-divider"></span><span class="brand-edition">THE PRACTITIONER’S FIELD GUIDE</span></a></div>
+    <nav class="topnav" aria-label="Primary"><a href="#/overview" data-top="overview">Framework</a><a href="#/projects" data-top="projects">Projects</a><a href="#/experiments" data-top="experiments">Experiments</a><a href="#/library" data-top="library">Library</a></nav>
+    <button class="search-trigger" id="search-button" aria-label="Search the lab"><span data-icon="search"></span><span>Search the lab</span><kbd>⌘ K</kbd></button>
+  </header>
+  <div class="app-shell"><aside class="sidebar" id="sidebar" aria-label="Knowledge navigation"></aside><div class="sidebar-shade" id="sidebar-shade"></div><div class="main-shell"><main id="main" tabindex="-1"></main><footer class="site-footer"><span><span class="footer-dot"></span>Evidence before confidence.</span><span>Understand. Build. Explore.</span><a href="#/library">Sources & methodology <span aria-hidden="true">↗</span></a></footer></div></div>
+  <dialog class="search-dialog" id="search-dialog" aria-labelledby="search-title"><div class="search-head"><span data-icon="search"></span><label class="sr-only" id="search-title" for="global-search">Search Evals Lab</label><input id="global-search" type="search" placeholder="Search concepts, projects, and methods…" autocomplete="off"><button class="icon-button" id="close-search" aria-label="Close search">Esc</button></div><div id="search-results" class="search-results" aria-live="polite"></div><div class="search-foot">Search across all five layers <span>↵ Open a result</span></div></dialog>
+  <div class="toast" id="toast" role="status" hidden></div>
+  <noscript><p class="noscript">Enable JavaScript to explore the interactive field guide. Original references: <a href="https://developers.openai.com/api/docs/guides/evaluation-best-practices">OpenAI evaluation practices</a> and <a href="https://www.anthropic.com/research/demystifying-evals-for-ai-agents">Anthropic agent evaluation guide</a>.</p></noscript>
+</body>
+</html>
