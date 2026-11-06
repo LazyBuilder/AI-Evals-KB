@@ -1,0 +1,622 @@
+{
+  "version": 4,
+  "reviewed": "2026-11-06",
+  "classification": "Difficulty describes assumed knowledge; content type describes the learning activity.",
+  "levels": {
+    "beginner": {
+      "label": "Beginner",
+      "description": "No previous AI evaluation experience. Lessons may build on earlier beginner steps."
+    },
+    "intermediate": {
+      "label": "Intermediate",
+      "description": "Assumes the basics of test cases, grading, and evaluation design. Plans may require coding."
+    },
+    "advanced": {
+      "label": "Advanced",
+      "description": "Assumes implementation experience plus the relevant statistics, agent, or production knowledge."
+    }
+  },
+  "types": {
+    "concept": "Concept lesson",
+    "howto": "How-to guide",
+    "practice": "Practice exercise",
+    "blueprint": "Implementation plan",
+    "methodology": "Methodology plan",
+    "experiment": "Interactive experiment",
+    "checklist": "Readiness checklist",
+    "template": "Reusable template",
+    "reference": "Reference",
+    "overview": "Layer overview"
+  },
+  "beginner_path": [
+    {
+      "step": 1,
+      "id": "first-eval",
+      "goal": "Understand the task → expected behavior → grade → decision loop."
+    },
+    {
+      "step": 2,
+      "id": "rubrics",
+      "goal": "Write a clear definition of a passing answer."
+    },
+    {
+      "step": 3,
+      "id": "golden-set",
+      "goal": "Choose cases that reveal useful differences and failures."
+    },
+    {
+      "step": 4,
+      "id": "grading",
+      "goal": "Choose a person, rule, or model to judge the evidence."
+    },
+    {
+      "step": 5,
+      "id": "safe-failures",
+      "goal": "Define clarification, abstention, and action boundaries."
+    },
+    {
+      "step": 6,
+      "id": "release",
+      "goal": "Connect the evidence to an accountable decision."
+    },
+    {
+      "step": 7,
+      "id": "first-eval-practice",
+      "goal": "Complete a five-case evaluation and write a next-action plan."
+    }
+  ],
+  "lessons": [
+    {
+      "id": "first-eval",
+      "title": "What is an AI evaluation?",
+      "href": "#/guide/first-eval",
+      "layer": "foundation",
+      "difficulty": "beginner",
+      "type": "concept",
+      "prerequisites": [],
+      "outcome": "Explain what an eval tests and name its four basic pieces.",
+      "next": "rubrics"
+    },
+    {
+      "id": "golden-set",
+      "title": "Build a useful golden set",
+      "href": "#/guide/golden-set",
+      "layer": "foundation",
+      "difficulty": "beginner",
+      "type": "howto",
+      "prerequisites": [
+        "rubrics"
+      ],
+      "outcome": "Create a small set of test cases with expected behavior and provenance.",
+      "next": "grading"
+    },
+    {
+      "id": "labeling",
+      "title": "Design human labeling and adjudication",
+      "href": "#/guide/labeling",
+      "layer": "foundation",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "golden-set",
+        "rubrics"
+      ],
+      "outcome": "Plan independent labels and a process for resolving disagreements.",
+      "next": "judge",
+      "terms": [
+        "Anchor: an independently reviewed example used to check a grader.",
+        "Adjudication: a domain reviewer resolves a material labeling disagreement."
+      ]
+    },
+    {
+      "id": "coverage",
+      "title": "Map dataset coverage and contamination",
+      "href": "#/guide/coverage",
+      "layer": "foundation",
+      "difficulty": "intermediate",
+      "type": "concept",
+      "prerequisites": [
+        "golden-set"
+      ],
+      "outcome": "Identify missing dataset slices and possible overlap with training data.",
+      "next": "contamination",
+      "terms": [
+        "Slice: a meaningful group of cases, such as a task, language, or risk level.",
+        "Held-out set: cases kept separate from training and iterative development."
+      ]
+    },
+    {
+      "id": "rubrics",
+      "title": "Define success before scoring",
+      "href": "#/guide/rubrics",
+      "layer": "definition",
+      "difficulty": "beginner",
+      "type": "concept",
+      "prerequisites": [
+        "first-eval"
+      ],
+      "outcome": "Describe success using observable criteria instead of a vague quality score.",
+      "next": "golden-set"
+    },
+    {
+      "id": "budgets",
+      "title": "Set quality, latency, and cost budgets",
+      "href": "#/guide/budgets",
+      "layer": "definition",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "rubrics"
+      ],
+      "outcome": "Set task-level quality, cost, and latency constraints.",
+      "next": "pareto",
+      "terms": [
+        "p95 latency: 95% of measured task durations are at or below this value."
+      ]
+    },
+    {
+      "id": "eval-spec",
+      "title": "Write an evaluation specification",
+      "href": "#/guide/eval-spec",
+      "layer": "definition",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "first-eval-practice"
+      ],
+      "outcome": "Write a versioned evaluation plan that connects evidence to a decision.",
+      "next": "gate"
+    },
+    {
+      "id": "grading",
+      "title": "Choose the right kind of grader",
+      "href": "#/guide/grading",
+      "layer": "measurement",
+      "difficulty": "beginner",
+      "type": "concept",
+      "prerequisites": [
+        "golden-set",
+        "rubrics"
+      ],
+      "outcome": "Choose a suitable grading approach and explain its limitations.",
+      "next": "safe-failures"
+    },
+    {
+      "id": "statistics",
+      "title": "Interpret differences and uncertainty",
+      "href": "#/guide/statistics",
+      "layer": "measurement",
+      "difficulty": "intermediate",
+      "type": "concept",
+      "prerequisites": [
+        "grading"
+      ],
+      "outcome": "Distinguish effect size, percentage points, and uncertainty.",
+      "next": "significance",
+      "terms": [
+        "Paired comparison: both systems are tested on the same tasks.",
+        "Percentage point: the absolute difference between percentages; 80% to 82% adds 2 points."
+      ]
+    },
+    {
+      "id": "agent-evals",
+      "title": "Evaluate outcomes and trajectories",
+      "href": "#/guide/agent-evals",
+      "layer": "measurement",
+      "difficulty": "intermediate",
+      "type": "concept",
+      "prerequisites": [
+        "grading"
+      ],
+      "outcome": "Separate final task outcomes from the sequence of agent actions.",
+      "next": "trajectory",
+      "terms": [
+        "Agent: an AI workflow that can choose actions and call tools.",
+        "Trajectory: the recorded sequence of actions, tool calls, and results."
+      ]
+    },
+    {
+      "id": "rag-evals",
+      "title": "Evaluate retrieval, support, and abstention",
+      "href": "#/guide/rag-evals",
+      "layer": "protection",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "grading",
+        "safe-failures"
+      ],
+      "outcome": "Test whether a retrieval-based answer is supported by its evidence.",
+      "next": "rag",
+      "terms": [
+        "RAG (retrieval-augmented generation): retrieving documents to help an AI answer.",
+        "Grounding: supporting answer claims with the available evidence."
+      ]
+    },
+    {
+      "id": "threat-model",
+      "title": "Test the boundaries around an agent",
+      "href": "#/guide/threat-model",
+      "layer": "protection",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "agent-evals",
+        "safe-failures"
+      ],
+      "outcome": "Map untrusted inputs, permissions, and forbidden outcomes.",
+      "next": "fuzzer",
+      "terms": [
+        "Prompt injection: untrusted content attempts to redirect the system’s behavior.",
+        "Threat model: a structured account of what could go wrong and where the boundaries are."
+      ]
+    },
+    {
+      "id": "multimodal",
+      "title": "Extend evaluation to voice and multimodal systems",
+      "href": "#/guide/multimodal",
+      "layer": "protection",
+      "difficulty": "intermediate",
+      "type": "concept",
+      "prerequisites": [
+        "grading",
+        "safe-failures"
+      ],
+      "outcome": "Identify failures across voice, visual, and interaction stages.",
+      "next": "context",
+      "terms": [
+        "Multimodal: working with more than one form of information, such as text, voice, or images."
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Connect evidence to a release decision",
+      "href": "#/guide/release",
+      "layer": "authority",
+      "difficulty": "beginner",
+      "type": "howto",
+      "prerequisites": [
+        "safe-failures"
+      ],
+      "outcome": "Describe the evidence, owner, and follow-up needed for a release decision.",
+      "next": "first-eval-practice"
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitor quality after release",
+      "href": "#/guide/monitoring",
+      "layer": "authority",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "release"
+      ],
+      "outcome": "Plan quality review and response ownership after release.",
+      "next": "drift",
+      "terms": [
+        "Drift: a change in inputs, measured behavior, or outcomes over time."
+      ]
+    },
+    {
+      "id": "reporting",
+      "title": "Write a methodology others can inspect",
+      "href": "#/guide/reporting",
+      "layer": "authority",
+      "difficulty": "intermediate",
+      "type": "howto",
+      "prerequisites": [
+        "eval-spec",
+        "statistics"
+      ],
+      "outcome": "Write a reviewable account of the claim, method, evidence, and limits.",
+      "next": "methodology"
+    },
+    {
+      "id": "safe-failures",
+      "title": "What should happen when the AI cannot answer?",
+      "href": "#/guide/safe-failures",
+      "layer": "protection",
+      "difficulty": "beginner",
+      "type": "concept",
+      "prerequisites": [
+        "grading"
+      ],
+      "outcome": "Specify what the system should do when evidence or authority is missing.",
+      "next": "release"
+    },
+    {
+      "id": "first-eval-practice",
+      "title": "Run your first evaluation without code",
+      "href": "#/guide/first-eval-practice",
+      "layer": "measurement",
+      "difficulty": "beginner",
+      "type": "practice",
+      "prerequisites": [
+        "release"
+      ],
+      "outcome": "Grade a small example, explain failures, and propose a next action.",
+      "next": "eval-spec"
+    }
+  ],
+  "project_plans": [
+    {
+      "id": "trajectory",
+      "title": "Trajectory Grading Engine",
+      "href": "#/project/trajectory",
+      "layer": "measurement",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "agent-evals",
+        "grading"
+      ],
+      "outcome": "Build and validate checks for tool calls and required steps."
+    },
+    {
+      "id": "shadow",
+      "title": "Shadow Routing Comparator",
+      "href": "#/project/shadow",
+      "layer": "authority",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "release",
+        "monitoring"
+      ],
+      "outcome": "Design an isolated comparison path for live workload samples.",
+      "assumes": "Production request routing, tracing, and isolation of state-changing tools."
+    },
+    {
+      "id": "judge",
+      "title": "Calibrated LLM-as-a-Judge",
+      "href": "#/project/judge",
+      "layer": "measurement",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "grading",
+        "labeling"
+      ],
+      "outcome": "Build a judge-calibration process against independent human labels."
+    },
+    {
+      "id": "gate",
+      "title": "CI/CD Regression Gate",
+      "href": "#/project/gate",
+      "layer": "authority",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "eval-spec",
+        "release"
+      ],
+      "outcome": "Implement a release policy as a check that can block a candidate."
+    },
+    {
+      "id": "rag",
+      "title": "RAG Adversarial Harness",
+      "href": "#/project/rag",
+      "layer": "protection",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "rag-evals"
+      ],
+      "outcome": "Build controlled context perturbations and grounding checks."
+    },
+    {
+      "id": "dpo",
+      "title": "Automated DPO Flywheel",
+      "href": "#/project/dpo",
+      "layer": "authority",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "monitoring",
+        "coverage"
+      ],
+      "outcome": "Design a reviewed feedback-to-training pipeline with independent evaluation.",
+      "assumes": "Preference learning, fine-tuning, dataset governance, and candidate model release."
+    },
+    {
+      "id": "significance",
+      "title": "Statistical Significance Engine",
+      "href": "#/project/significance",
+      "layer": "measurement",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "statistics"
+      ],
+      "outcome": "Implement paired, assumption-aware uncertainty estimates.",
+      "assumes": "Paired data, dependence, confidence intervals, and implementing a resampling method."
+    },
+    {
+      "id": "fuzzer",
+      "title": "Agent Red-Team Fuzzer",
+      "href": "#/project/fuzzer",
+      "layer": "protection",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "threat-model",
+        "agent-evals"
+      ],
+      "outcome": "Build an isolated adversarial harness and a reproducible failure corpus."
+    },
+    {
+      "id": "drift",
+      "title": "Production Drift Monitor",
+      "href": "#/project/drift",
+      "layer": "authority",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "monitoring",
+        "statistics"
+      ],
+      "outcome": "Build a sampling and alerting system that distinguishes signals from causes.",
+      "assumes": "Production instrumentation, sampling, and alert ownership."
+    },
+    {
+      "id": "pareto",
+      "title": "Cost–Quality Pareto Dashboard",
+      "href": "#/project/pareto",
+      "layer": "definition",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "budgets",
+        "statistics"
+      ],
+      "outcome": "Compare constrained cost-quality tradeoffs using measured outcomes."
+    },
+    {
+      "id": "replay",
+      "title": "Counterfactual Replay Debugger",
+      "href": "#/project/replay",
+      "layer": "measurement",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "agent-evals"
+      ],
+      "outcome": "Design state capture and a controlled replay intervention.",
+      "assumes": "Recorded state, dependency graphs, and isolated replay of external tools."
+    },
+    {
+      "id": "synthetic",
+      "title": "Synthetic Edge-Case Generator",
+      "href": "#/project/synthetic",
+      "layer": "foundation",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "golden-set",
+        "coverage"
+      ],
+      "outcome": "Generate, review, and deduplicate candidate edge cases."
+    },
+    {
+      "id": "context",
+      "title": "Context Window Eviction Tester",
+      "href": "#/project/context",
+      "layer": "protection",
+      "difficulty": "advanced",
+      "type": "blueprint",
+      "prerequisites": [
+        "agent-evals",
+        "multimodal"
+      ],
+      "outcome": "Measure retention and recovery under controlled context pressure.",
+      "assumes": "Agent memory policies, token budgets, and controlled long-running tasks."
+    },
+    {
+      "id": "contamination",
+      "title": "Dataset Contamination Checker",
+      "href": "#/project/contamination",
+      "layer": "foundation",
+      "difficulty": "intermediate",
+      "type": "blueprint",
+      "prerequisites": [
+        "coverage"
+      ],
+      "outcome": "Implement overlap detection with reviewed exclusion decisions."
+    },
+    {
+      "id": "methodology",
+      "title": "Public Eval Methodology Teardown",
+      "href": "#/project/methodology",
+      "layer": "definition",
+      "difficulty": "intermediate",
+      "type": "methodology",
+      "prerequisites": [
+        "reporting",
+        "statistics"
+      ],
+      "outcome": "Produce a reproducible methodology and evidence package."
+    }
+  ],
+  "experiments": {
+    "trace": {
+      "difficulty": "intermediate",
+      "type": "experiment",
+      "prerequisites": [
+        "agent-evals",
+        "grading"
+      ],
+      "outcome": "Spot a step-level failure that a fluent final answer can hide.",
+      "layer": "measurement"
+    },
+    "judge": {
+      "difficulty": "beginner",
+      "type": "experiment",
+      "prerequisites": [
+        "grading"
+      ],
+      "outcome": "See why answer order and length can distort a judge’s preference.",
+      "layer": "measurement"
+    },
+    "gate": {
+      "difficulty": "intermediate",
+      "type": "experiment",
+      "prerequisites": [
+        "rubrics",
+        "release"
+      ],
+      "outcome": "See how explicit acceptance criteria change a release verdict.",
+      "layer": "authority"
+    }
+  },
+  "references": [
+    {
+      "id": "openai",
+      "title": "Evaluation best practices",
+      "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices",
+      "difficulty": "intermediate",
+      "type": "reference"
+    },
+    {
+      "id": "anthropic",
+      "title": "Demystifying evals for AI agents",
+      "url": "https://www.anthropic.com/research/demystifying-evals-for-ai-agents",
+      "difficulty": "advanced",
+      "type": "reference"
+    },
+    {
+      "id": "ragas",
+      "title": "Faithfulness metric",
+      "url": "https://docs.ragas.io/en/latest/concepts/metrics/available_metrics/faithfulness/",
+      "difficulty": "advanced",
+      "type": "reference"
+    },
+    {
+      "id": "scipy",
+      "title": "Bootstrap confidence intervals",
+      "url": "https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.bootstrap.html",
+      "difficulty": "advanced",
+      "type": "reference"
+    },
+    {
+      "id": "owasp",
+      "title": "LLM01: Prompt injection",
+      "url": "https://genai.owasp.org/llmrisk/llm01-prompt-injection/",
+      "difficulty": "intermediate",
+      "type": "reference"
+    },
+    {
+      "id": "nist",
+      "title": "AI Risk Management Framework 1.0",
+      "url": "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.100-1.pdf",
+      "difficulty": "intermediate",
+      "type": "reference"
+    },
+    {
+      "id": "dpo",
+      "title": "Direct Preference Optimization",
+      "url": "https://arxiv.org/abs/2305.18290",
+      "difficulty": "advanced",
+      "type": "reference"
+    }
+  ]
+}
